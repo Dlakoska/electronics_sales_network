@@ -12,6 +12,8 @@ def test_create_user(api_client):
         "first_name": "test",
         "last_name": "test"
     }
+
     response = api_client.post(f'/users/register/', data, format='json')
+
     assert response.status_code == 201
     assert User.objects.filter(email="test@example.com").exists()
