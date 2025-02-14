@@ -66,7 +66,9 @@ def test_delete_network_node(api_client, active_user, network_node):
 def test_filter_network_nodes(api_client, active_user, network_node):
     api_client.force_authenticate(user=active_user)
     url = f'/network/nodes/' + f'?city={network_node.city}'
+
     response = api_client.get(url)
+
     assert response.status_code == 200
     assert len(response.data) == 1
     assert response.data[0]['city'] == network_node.city
