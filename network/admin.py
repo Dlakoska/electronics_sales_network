@@ -6,7 +6,7 @@ from django.contrib import admin
 
 @admin.register(NetworkNode)
 class NetworkNodeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'city', 'supplier_link', 'debt')
+    list_display = ('id', 'name', 'city', 'supplier_link', 'debt', 'level')
     list_filter = ('city',)
     actions = ['clear_debt']
 
